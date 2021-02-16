@@ -49,9 +49,11 @@ There are runtimes referred to as quadratic time, where the run time is equivale
 O(n<sup>2</sup>) Time: 
 
 {% highlight javascript %}
-function printAll(items) {
+function printPairs(items) {
     for (let item in items) {
-        console.log(items)
+        for (let secondItem in items) {
+            console.log(item, secondItem)
+        }
     }
 }
 {% endhighlight %}
