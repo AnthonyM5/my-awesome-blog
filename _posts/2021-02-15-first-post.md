@@ -44,7 +44,8 @@ function printAll(items) {
 {% endhighlight %}
 
 
-There are runtimes referred to as quadratic time, where the run time is equivalent to the squared input.  
+There are runtimes referred to as quadratic time, where the run time is equivalent to the squared input. We're nesting two loops, our inner loop runs n times each iteration of the outter loop (n x n or n<sup>2</sup>).
+
 
 O(n<sup>2</sup>) Time: 
 
