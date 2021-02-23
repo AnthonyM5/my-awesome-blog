@@ -40,15 +40,16 @@ So we could do something like:
 function inflightMovies(flight_length, movie_lengths) {
     const movieObj = {}
 
-    for (movie in movie_lengths) {
-        let match = movie - flight_length
-            if (movieObj[match]) {
+    for (let i = 0; i < movie_lengths.length -1; i++ ) {
+        let match = flight_length - movie_lengths[i]
+            if ( movieObj[match] !== undefined ) {
                     return true
                 }
-                movieObj[movie] = movie
+                  movieObj[movie_lengths[i]] = i
             }
-    return false;
+    return false
 }
+
 
 {% endhighlight %}
 
