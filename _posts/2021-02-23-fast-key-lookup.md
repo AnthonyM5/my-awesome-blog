@@ -5,7 +5,7 @@ title:  "Fast Lookup with Hashes"
 
 #### Code Challenges, and Optimizations: Part 2
 
-Last week we discussed the concept of time complexity when it comes to our algorithims - and how this is likely to come up during technical interviews.  For additional context we will be using the Inflight Entertainment problem from Interview Cake[1].  
+Last week we discussed the concept of time complexity when it comes to our algorithms - and how this is likely to come up during technical interviews.  For additional context we will be using the Inflight Entertainment problem from [Interview Cake][1].  
 
 The Background: Customers on long-haul flights light to queue up a second movie after their first ends, but are annoyed that their flight lands before they get to the end.  So you are tasked with building a new feature that will allow users to select two movies with total runtimes equal to the length of the flight.  
 
@@ -29,9 +29,9 @@ function inflightMovies(flight_length, movie_lengths) {
 
 {% endhighlight %}
 
-This solution uses O(N * N) or O(n<sup>2</sup>) Time - our algorithim starts with the first loop that selects the first movie_length and runs a nested loop to compare that movie_length with a second movie_length, until all pairs are evaluated. Time complexity can be thought of in terms of worst-case complexity - like iterating through our entire array until the end runnig through all possible combinations, or best-case complexity - like if we were to find our match within the first two movie_lengths checked.  
+This solution uses O(N * N) or O(n<sup>2</sup>) Time - our algorithm starts with the first loop that selects the first movie_length and runs a nested loop to compare that movie_length with a second movie_length, until all pairs are evaluated. Time complexity can be thought of in terms of worst-case complexity - like iterating through our entire array until the end running through all possible combinations, or best-case complexity - like if we were to find our match within the first two movie_lengths checked.  
 
-For optimization we can think about reducing what we are solving for - if we have the flight_length and the first movie_length, we already know that any match would have to equal flight_length - the first movie_length.  But the crux of our problem is our nested loop in which we iterate through the array.  For a more efficient data structure, we must look to a type of associate array, or a hash table (Javscript Object) - where we can map our movie_length values to keys of our own choosing.  With a Javascript object or a hash table, we can "look up" values by their keys, returning either the value stored, or a falsy (undefined). 
+For optimization we can think about reducing what we are solving for - if we have the flight_length and the first movie_length, we already know that any match would have to equal flight_length - the first movie_length.  But the crux of our problem is our nested loop in which we iterate through the array.  For a more efficient data structure, we must look to a type of associate array, or a hash table (Javascript Object) - where we can map our movie_length values to keys of our own choosing.  With a Javascript object or a hash table, we can "look up" values by their keys, returning either the value stored, or a falsy (undefined). 
 
 So we could do something like: 
 
