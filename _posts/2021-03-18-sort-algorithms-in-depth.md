@@ -73,40 +73,47 @@ These methods both involve a O(n<sup>2</sup>) time complexity so we will explore
 We break up our input array until there is only one element left (one element is by default sorted), then we merge the subArrays together until one sorted array remains.
 
 {% highlight javascript %}
+//We are looking to split array *arr* in half recursively 
+//Return our base case of a single element *arr*
 
-function mergeSort (arr) {
+const mergeSort = (arr) => {
   if (arr.length === 1) {
-    // return once we hit an array with a single item
     return arr
   }
 
-  const middle = Math.floor(arr.length / 2) // get the middle item of the array rounded down
-  const left = arr.slice(0, middle) // items on the left side
-  const right = arr.slice(middle) // items on the right side
-
+//We find the middle index of the array, and round down
+  const middle = Math.floor(arr.length / 2) 
+//Set variable for left side of the array
+  const left = arr.slice(0, middle)
+//Set variable for right side of the array
+  const right = arr.slice(middle) 
+//Helper function to help us merge our subArrays
   return merge(
     mergeSort(left),
     mergeSort(right)
   )
 }
 
-// compare the arrays item by item and return the concatenated result
+//We compare the arrays and merge them into a new array
 function merge (left, right) {
   let result = []
-  let indexLeft = 0
-  let indexRight = 0
+  let leftIndex = 0
+  let rightIndex = 0
 
-  while (indexLeft < left.length && indexRight < right.length) {
-    if (left[indexLeft] < right[indexRight]) {
-      result.push(left[indexLeft])
-      indexLeft++
+//We iterate through left and right arrays until the end
+  while (leftIndex < left.length && rightIndex < right.length) {
+//Compare right and left arrays and we build out the sorted array
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex])
+      leftIndex++
     } else {
-      result.push(right[indexRight])
-      indexRight++
+      result.push(right[rightIndex])
+      rightIndex++
     }
   }
-
-  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+//We return the results array and add back the elements left over
+//as in the case where the arrays are unequal lengths 
+  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
 }
 
 
