@@ -147,6 +147,9 @@ Result: [ 1, 7, 13, 16 ]
 {% endhighlight %}
 
 
+#### Visualization of Merge Sort: 
+
+![merge-sort](https://bs-uploads.toptal.io/blackfish-uploads/sorting_algorithms_page/content/illustration/animated_image_file/animated_image/27903/merge-sort-3d471ac722ab52fc3a8cc59162808c60.gif)
 
 
 
