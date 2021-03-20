@@ -66,16 +66,17 @@ const insertionSort = (arr) => {
 ![insertion-sort](https://bs-uploads.toptal.io/blackfish-uploads/sorting_algorithms_page/content/illustration/animated_image_file/animated_image/27775/insertion-sort-73d4d2a97b420f9cc1d4b2a6f1c7f4c9.gif)
 
 
-These methods both involve a O(n<sup>2</sup>) time complexity so we will explore more efficient ways of sorting using strategies like Divide and Conquer, and recursion. 
+These methods both involve a O(n<sup>2</sup>) time complexity so we will explore more efficient ways of sorting using a mergesort strategy that combines the concepts of recurison, and divide and conquer.  
 
 ### Merge Sorting:
 
-We break up our input array until there is only one element left (one element is by default sorted), then we merge the subArrays together until one sorted array remains.
+We break up our input array until there is only one element left (one element is by default sorted), then we merge the subArrays together until one sorted array remains.  
+
+This divide and conquer technique resolves the sorting by returning single element subArrays that are by default sorted.  Thus when we pass left/right arrays to our merge function they are already sorted.  Our mergeSort function then recursively is able to merge subArrays until only one final array remains, that has already been sorted.  This allows for a logarithmic (dividing by 2 or halving) run time.
+
+O(n(Log n)) Runtime
 
 {% highlight javascript %}
-//We are looking to split array *arr* in half recursively 
-//Return our base case of a single element *arr*
-
 const mergeSort = (arr) => {
   if (arr.length === 1) {
     return arr
@@ -88,6 +89,7 @@ const mergeSort = (arr) => {
 //Set variable for right side of the array
   const right = arr.slice(middle) 
 //Helper function to help us merge our subArrays
+  console.log("Left:", left, "Right:", right)
   return merge(
     mergeSort(left),
     mergeSort(right)
@@ -99,7 +101,6 @@ function merge (left, right) {
   let result = []
   let leftIndex = 0
   let rightIndex = 0
-
 //We iterate through left and right arrays until the end
   while (leftIndex < left.length && rightIndex < right.length) {
 //Compare right and left arrays and we build out the sorted array
@@ -110,15 +111,40 @@ function merge (left, right) {
       result.push(right[rightIndex])
       rightIndex++
     }
+    console.log("Result:", result)
   }
-//We return the results array and add back the elements left over
-//as in the case where the arrays are unequal lengths 
-  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
+//We return results, and if there is an uneven array we can include any remainder 
+//If left or right index reaches the end of the array slice returns nothing
+    return [...result, ...left.slice(leftIndex), ...right.slice(rightIndex)]
 }
 
 
 {% endhighlight %}
 
+{% highlight javascript %}
+const array = [1,56,7,13,16]
+
+//1. First we split array into halves 
+Left: [ 1, 56 ] Right: [ 7, 13, 16 ]
+//2. We continue splitting arrays in half until base case:
+Left: [ 1 ] Right: [ 56 ] 
+//3. We can now compare 2 values and merge into result array.
+Result: [ 1 ]
+//4. We can now sorting the right half the array from step 1.
+Left: [ 7 ] Right: [ 13, 16 ]
+//5. Base Case
+Left: [ 13 ] Right: [ 16 ]
+Result: [ 13 ]
+Result: [ 7 ]
+Result: [ 1 ]
+Result: [ 1, 7 ]
+Result: [ 1, 7, 13 ]
+//6. Our results array is missing an element that we add back with the spread operator
+Result: [ 1, 7, 13, 16 ]
+//7. Result
+[ 1, 7, 13, 16, 56 ]
+
+{% endhighlight %}
 
 
 
