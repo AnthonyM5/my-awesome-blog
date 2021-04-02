@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: page
 title: About
 permalink: /about/
-social-icons:
--title: GitHub
- url: https://github.com/AnthonyM5
+# social-icons:
+# -title: GitHub
+#  url: https://github.com/AnthonyM5
 
 ---
 
