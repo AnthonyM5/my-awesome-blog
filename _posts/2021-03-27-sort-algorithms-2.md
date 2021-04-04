@@ -8,6 +8,7 @@ title:  "Sorting Algorithms in Depth Pt. 2"
 
 ---
 
+
 Another efficient sorting method we can implement is Quick Sort.  This algorithm is similar to Merge Sort in that it is a divide and conquer technique that breaks down the problem into smaller parts, and uses recursion to solve sub-problems starting from a base case.  
 
 Instead of splitting our array into two halves and sorting the halves quick sort utilizes a comparision element called a pivot.
@@ -79,6 +80,8 @@ const quickSort = (array) => {
   for ( let i = 0; i < array.length - 1; i++) {
     array[i] < pivot ? leftArr.push(array[i]) : rightArr.push(array[i])
   }
+  //We return a desctructured array containing the value of a quicksorted 
+  //left array + the pivot + the quicksorted right array - this accounts for uneven arrays
   return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]
 }
 
