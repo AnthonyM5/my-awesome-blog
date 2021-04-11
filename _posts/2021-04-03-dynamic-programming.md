@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dynamic Progrmaming or How I learned to Love Sub-Problems
+title: Dynamic Programming or How I learned to Love Sub-Problems
 ---
 
 <p>With our previous sorting algorithims we've employed the Divide and Conquer technique to recursively break problems into smaller easier to solve problems, before merging (bottom-up approach) to generate the final (initial request) result.  Dynamic Programming can also use recursion to help us solve problems, but with a top-down approach - i.e we only solve the base case sub-problem once and store the value to solve the larger sub-problems and continue storing these values. </p>
