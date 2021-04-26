@@ -16,11 +16,11 @@ canSum(5, [2,4,1,6,1])
 
 {% endhighlight %}
 
-Our problem should return yes/no, or in this case a boolean true/false.  Our decision procedure will be an algorithm that will determine whether the elements in the input array can sum to our target number.  We can visiualize the problem as a recursive tree by checking each eleement of the array against the target number, with the end of our tree yielding 0 if it there is a possible combination. 
+Our problem should return yes/no, or in this case a boolean true/false.  Our decision procedure will be an algorithm that will determine whether the elements in the input array can sum to our target number.  We can visiualize the problem as a recursive tree by checking each element of the array against the target number, with the end of our tree yielding 0 if it there is a possible combination. 
 
 ![tree](https://drive.google.com/uc?id=1BlztedSRiPzRprnflVDojFUV5pM3F5P8)
 
-We know that if we reach 0 we reach a base case where the combinations of input numbers can add up to the target number.  Simiilarly, if we return a negative number we know that it is not possible to sum exactly to the target number.  
+We know that if we reach 0 we reach a base case where the combinations of input numbers can add up to the target number.  Similarly, if we return a negative number we know that it is not possible to sum exactly to the target number.  
 
 
 This gives us a recursive outline:
@@ -81,7 +81,7 @@ const canSum = (targetNum, numbers) => {
 
 {% endhighlight %}
 
-We can further increase our algorithim's complexity by returning the values used to sum to the target sum and utilizing additional data during each call.  
+We can further increase our algorithm's complexity by returning the values used to sum to the target sum and utilizing additional data during each call.  
 
 {% highlight javascript %}
 
@@ -116,7 +116,7 @@ const howSum = (targetNum, numbers) => {
 
 {% endhighlight %}
 
-From here we can see that there is a way for us to find the best possible combinations (i.e the shortest number of integers) that can derive our *targetNum*.  Since our above algorithim returned early once it found any combination, we can further tweak this procedure to track an additional variable for the *shortestCombination*
+From here we can see that there is a way for us to find the best possible combinations (i.e the shortest number of integers) that can derive our *targetNum*.  Since our above algorithm returned early once it found any combination, we can further tweak this procedure to track an additional variable for the *shortestCombination*
 
 {% highlight javascript %}
 
@@ -154,4 +154,4 @@ const bestSum = (targetNum, numbers) => {
 {% endhighlight %}
 
 
-If our canSum algorithim was an example of a decision procedure, our howSum is an example of a combination problem, and the bestSum is an optimization problem.  canSum was trying to figure out whether something was simply true/false.  howSum required us to track the combinations (just the first combination), and the final iteration asked us to optimize and find the shortest possible combination. Each is an example of using dynamic programming to help track and re-use values (branches) that have already been calculated and memoized.
+If our canSum algorithm was an example of a decision procedure, our howSum is an example of a combination problem, and the bestSum is an optimization problem.  canSum was trying to figure out whether something was simply true/false.  howSum required us to track the combinations (just the first combination), and the final iteration asked us to optimize and find the shortest possible combination. Each is an example of using dynamic programming to help track and re-use values (branches) that have already been calculated and memoized.
