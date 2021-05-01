@@ -36,7 +36,7 @@ Explanation: The only group is "a", which remains uncompressed since it's a sing
 
 
 #### First Approach
-The first instict is to initialize the string *s* to store the new compressed string.  Next would be to iterate through the input array of chars, and initialize a counter to be able to keep track of how many times a char has been encountered.  
+The first instinct is to initialize the string *s* to store the new compressed string.  Next would be to iterate through the input array of chars, and initialize a counter to be able to keep track of how many times a char has been encountered.  
 
 
 {% highlight javascript %}
@@ -62,7 +62,7 @@ while (i < chars.length - 1 && chars[i] === chars[i + 1]){
     }
 {% endhighlight %}
 
-We can then handle our cases to either appent our char + count to *s*, or just the char:
+We can then handle our cases to either append our char + count to *s*, or just the char:
 
 {% highlight javascript %}
 
@@ -78,7 +78,7 @@ if (count === 1){
 
 The problem then requires us not to return *s* but append to our original input array, and return the length of the new array.  The Array.prototype.splice() method provided to us with JavaScript is the perfect solution because it will modify the original array by allowing us to remove or replace existing elements inside the array.  Since we are essentially constructing a new compressed array we can splice the *chars* array at index of the last repeating char.  
 
-We loop through the compressed string *s* and remove elements from the char array and replace with elements from the compressed string.  We also handle for cases where the *chars* array is longer than the comrpessed string by removing every additional element. 
+We loop through the compressed string *s* and remove elements from the char array and replace with elements from the compressed string.  We also handle for cases where the *chars* array is longer than the compressed string by removing every additional element. 
 
 {% highlight javascript %}
 
