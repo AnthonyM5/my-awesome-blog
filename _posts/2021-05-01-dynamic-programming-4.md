@@ -124,7 +124,49 @@ const countConstruct = (target, wordBank) => {
 
 {% endhighlight %}
 
+#### Keeping track of the combinations 
 
+Similar to our countConstruct (and the howSum solution from last week), we can apply an additional variable and return the total combinations that can construct our target word.  As we recursively test our combinations we can store the elements in an array and return that instead of the total count.  
+
+
+{% highlight javascript %}
+
+const allConstruct = (target, wordBank) => {
+
+  //Our base case  
+
+  if (target === '') return [[]]
+
+  //We store our substrings in a result array to return at the end
+  const result = []
+
+  for (let word of wordBank) {
+    if (target.indexOf(word) === 0) {
+      const suffix = target.slice(word.length)
+      
+      //The remaining ways to construct our suffix  
+
+      const suffixWays = allConstruct(suffix, wordBank)
+
+      //The completed target can be constructed by combining 
+      //the current word and the array of ways to construct the suffix
+
+      //Spread the array of suffix pairs to add the current word
+
+      const targetWays = suffixWays.map(way => [word, ...way])
+
+      //Push the new *targetWays* array into our results array
+
+      result.push(...targetWays)
+    }
+  }
+      //The end result should either be an array of our *targetWays* combinations
+      //or our original 1-D results variable if no *targetWays* are found 
+    
+    return result
+}
+
+{% endhighlight %}
 
 [1]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
 [2]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
