@@ -22,6 +22,7 @@ gridTraveller[3]
 3. We bottom out at either the target(1,1) or an index with a 0 meaning we've reached an impossible path.
 ![tree](https://drive.google.com/uc?id=1HZ8zqfLyh5YFJ1FIzfXthUtvjgfZ_WVL)
 
+
 Another Dynamic Programming approach is called Tabulation, and is considered a bottom up approach.  This means that instead of working down from the target to a base case, we start solving from the base case on upwards to the target.  One advantage of tabulation is whenever you have an algorithm that requires you to solve every sub-problem - tabulation will beat a top-down memoized algorithm.  A memoized solution will save time to avoid recalculating already solved branches but will not offer an advantage if every sub-problem needs to be traversed.  
 
 ![tabulation]https://qph.fs.quoracdn.net/main-qimg-7438f6e5470283b2c699e3ba04b3a502
