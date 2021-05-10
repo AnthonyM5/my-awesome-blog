@@ -22,6 +22,34 @@ gridTraveller[3]
 3. We bottom out at either the target(1,1) or an index with a 0 meaning we've reached an impossible path.
 ![tree](https://drive.google.com/uc?id=1HZ8zqfLyh5YFJ1FIzfXthUtvjgfZ_WVL)
 
+Another Dynamic Programming approach is called Tabulation, and is considered a bottom up approach.  This means that instead of working down from the target to a base case, we start solving from the base case on upwards to the target.  One advantage of tabulation is whenever you have an algorithm that requires you to solve every sub-problem - tabulation will beat a top-down memoized algorithm.  A memoized solution will save time to avoid recalculating already solved branches but will not offer an advantage if every sub-problem needs to be traversed.  
+
+![tabulation]https://qph.fs.quoracdn.net/main-qimg-7438f6e5470283b2c699e3ba04b3a502
+
+
+For example with tabulation we can solve for the fibonacci number *n* without memoization and still enjoy similar efficiency.
+
+{% highlight javascript %}
+
+const fib = (n) => {
+    //We create our tabulation table, 
+    //we need an additional box for the *nth* number
+    //We start by filling them with 0s
+    const table = Array(n + 1).fill(0)
+    table[1] = 1
+
+    for (let i = 0; i <= n; i++) {
+    //We calculate up to our target 
+    //Using base case as our start
+        table[i + 1] += table[i]
+        table[i+ 2] += table[i]
+    }
+
+    return table[n]
+}
+
+{% endhighlight %}
+
 
 
 [1]:https://anthonym5.github.io/my-awesome-blog/2021/04/25/dynamic-programming-3.html
