@@ -3,7 +3,7 @@ layout: post
 title: Dynamic Programming - Decision Procedures, and Optimizations
 ---
 
-A decison problem is essentially a problem that can be represented as a yes/no question, and an algorithm tasked with solving the problem is called a decision procedure.
+A decision problem is essentially a problem that can be represented as a yes/no question, and an algorithm tasked with solving the problem is called a decision procedure.
 
 ![Decision Problem](https://upload.wikimedia.org/wikipedia/commons/0/06/Decision_Problem.svg)
 
@@ -16,7 +16,7 @@ canSum(5, [2,4,1,6,1])
 
 {% endhighlight %}
 
-Our problem should return yes/no, or in this case a boolean true/false.  Our decision procedure will be an algorithm that will determine whether the elements in the input array can sum to our target number.  We can visiualize the problem as a recursive tree by checking each element of the array against the target number, with the end of our tree yielding 0 if it there is a possible combination. 
+Our problem should return yes/no, or in this case a boolean true/false.  Our decision procedure will be an algorithm that will determine whether the elements in the input array can sum to our target number.  We can visualize the problem as a recursive tree by checking each element of the array against the target number, with the end of our tree yielding 0 if it there is a possible combination. 
 
 ![tree](https://drive.google.com/uc?id=1BlztedSRiPzRprnflVDojFUV5pM3F5P8)
 
