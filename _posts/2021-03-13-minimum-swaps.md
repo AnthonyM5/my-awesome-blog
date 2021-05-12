@@ -36,7 +36,7 @@ Constraints:
 * 1 <= *n* <= 10<sup>5</sup>
 * 1 <= arr[i] <= n
 
-The constraints specify integer *n* representing the number of elements in array *arr* can be quite large so time complexity will certainly play a factor in getting the correct answer.  Given the finite amount of memory allocated to us with Javascript's stack data structure we may find that a brute force solution exceeds the [maximum call stack size][2].
+The constraints specify integer *n* representing the number of elements in array *arr* can be quite large so time complexity will certainly play a factor in getting the correct answer.  Given the finite amount of memory allocated to us with JavaScript's stack data structure we may find that a brute force solution exceeds the [maximum call stack size][2].
 
 Points to Consider:
 * Our sorting method will need to identify the element in place, and perform the swap if necessary

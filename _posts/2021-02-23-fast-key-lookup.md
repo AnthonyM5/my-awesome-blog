@@ -7,7 +7,7 @@ title:  "Fast Lookup with Hashes"
 
 Last week we discussed the concept of time complexity when it comes to our algorithms - and how this is likely to come up during technical interviews.  For additional context we will be using the Inflight Entertainment problem from [Interview Cake][1].  
 
-The Background: Customers on long-haul flights light to queue up a second movie after their first ends, but are annoyed that their flight lands before they get to the end.  So you are tasked with building a new feature that will allow users to select two movies with total runtimes equal to the length of the flight.  
+The Background: Customers on long-haul flights light to queue up a second movie after their first ends, but are annoyed that their flight lands before they get to the end.  So you are tasked with building a new feature that will allow users to select two movies with total run-times equal to the length of the flight.  
 
 Your function will receive an integer flight_length (in minutes), and a list of integers of movie_lengths (in minutes) that and will return true/false if any two individual movies in the list equal the total run time of the flight.  
 

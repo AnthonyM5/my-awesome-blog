@@ -66,7 +66,7 @@ const insertionSort = (arr) => {
 ![insertion-sort](https://bs-uploads.toptal.io/blackfish-uploads/sorting_algorithms_page/content/illustration/animated_image_file/animated_image/27775/insertion-sort-73d4d2a97b420f9cc1d4b2a6f1c7f4c9.gif)
 
 
-These methods both involve a O(n<sup>2</sup>) time complexity so we will explore more efficient ways of sorting using a mergesort strategy that combines the concepts of recurison, and divide and conquer.  
+These methods both involve a O(n<sup>2</sup>) time complexity so we will explore more efficient ways of sorting using a mergesort strategy that combines the concepts of recursion, and divide and conquer.  
 
 ### Merge Sorting:
 

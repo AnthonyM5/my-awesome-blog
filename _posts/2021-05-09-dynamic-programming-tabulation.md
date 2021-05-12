@@ -28,7 +28,7 @@ So far we have explored a top-down approach to dynamic programming by using usin
 
 Another Dynamic Programming approach is called Tabulation, and is considered a bottom up approach.  This means that instead of working down from the target to a base case, we start solving from the base case on upwards to the target.  One advantage of tabulation is whenever you have an algorithm that requires you to solve every sub-problem - tabulation will beat a top-down memoized algorithm.  A memoized solution will save time to avoid recalculating already solved branches but will not offer an advantage if every sub-problem needs to be traversed.  
 
-![tabulation]https://qph.fs.quoracdn.net/main-qimg-7438f6e5470283b2c699e3ba04b3a502
+![tabulation](https://qph.fs.quoracdn.net/main-qimg-7438f6e5470283b2c699e3ba04b3a502)
 
 
 For example with tabulation we can solve for the fibonacci number *n* without memoization and still enjoy similar efficiency.

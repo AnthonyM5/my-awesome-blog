@@ -3,7 +3,7 @@ layout: post
 title: Dynamic Programming - When to Memoize 
 ---
 
-Last post we discussed the ability of a dynamic programming approach (recursion + re-use) to drasticially improve run time and eliminate unnecessary function calls in a classical recursive solution like our original fibonacci function.  The introduction of memoization allowed us to store and re-use already solved sub-problems (branches in our fib-tree) without requiring our function to recursively call repeatedly - this is sometimes called a lazy solution where terms are only calculated the first time they are asked for.
+Last post we discussed the ability of a dynamic programming approach (recursion + re-use) to drastically improve run time and eliminate unnecessary function calls in a classical recursive solution like our original fibonacci function.  The introduction of memoization allowed us to store and re-use already solved sub-problems (branches in our fib-tree) without requiring our function to recursively call repeatedly - this is sometimes called a lazy solution where terms are only calculated the first time they are asked for.
 
 {% highlight javascript %}
 // Declare an empty JS object (outside of the function) for us to store our data.
@@ -59,14 +59,14 @@ const uniquePaths = (m, n) => {
 {% endhighlight %}
 
 
-If we run this in Leetcode we do pass the test cases, but upon submitting the solution we run into a Time Limit Exceeded status.  For larger grids the number of paths our function must travel and test is exponential, similarly to our recurisve fibonacci function.
+If we run this in Leetcode we do pass the test cases, but upon submitting the solution we run into a Time Limit Exceeded status.  For larger grids the number of paths our function must travel and test is exponential, similarly to our recursive fibonacci function.
 
 Our brute force solution would have a runtime of O(2<sup>(m + n)</sup>) so larger grids will run too slowly (like when we ran fib(50)).
 
 ![recursive](https://drive.google.com/uc?id=1veo1sfsWeCGeXyU9tjvc9tIywOYcbc8F)
 
   
-Since our tree solution highlighted a recursive way to test paths, and our recursive solutiopn pass the test cases we can assume the brute force solution maybe be a candidate for dynamic programming with memoization.  From looking at our diagram we can see some branches are repeated, and there are patterns that can be memoized to save us extra calcuations - for example, we have 2 branches for (1,2) that can be optimized.  
+Since our tree solution highlighted a recursive way to test paths, and our recursive solution pass the test cases we can assume the brute force solution maybe be a candidate for dynamic programming with memoization.  From looking at our diagram we can see some branches are repeated, and there are patterns that can be memoized to save us extra calculations - for example, we have 2 branches for (1,2) that can be optimized.  
 
 By adding a memo object like we did with fibonacci we can store our grid coordinates, and the return value of those coordinates to bring us to our "lazy" solution - each set of unique coordinate arguments are calculated the first time only.
 

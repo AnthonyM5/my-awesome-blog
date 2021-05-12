@@ -20,7 +20,7 @@ A common strategy after reviewing and confirming the parameters of the problem i
 
 A secondary part of the code challenge is the optimization portion, where your interviewer may ask you to review your solution, and hink about ways to decrease time and space complexity. ([Big O Notation][4])  In Computer Science, Big O Notation refers to how quickly our functions run relative to our input, as input increases.  In other words, Big O Notation helps us to classify how efficent our code is when faced with arbitrarily large inputs.  
 
-There are runtimes that are constant, the "steps" required in our code is unchanging relative to input.
+There are run-times that are constant, the "steps" required in our code is unchanging relative to input.
 
 O(1) Time:
 
@@ -31,7 +31,7 @@ function printFirst(arr) {
 {% endhighlight %}
 
 
-There are runtimes that are linear, as in our code iterates linearly.
+There are run-times that are linear, as in our code iterates linearly.
 
 O(n) Time:
 
@@ -44,7 +44,7 @@ function printAll(items) {
 {% endhighlight %}
 
 
-There are runtimes referred to as quadratic time, where the run time is equivalent to the squared input. We're nesting two loops, our inner loop runs n times each iteration of the outter loop (n x n or n<sup>2</sup>).
+There are run-times referred to as quadratic time, where the run time is equivalent to the squared input. We're nesting two loops, our inner loop runs n times each iteration of the outer loop (n x n or n<sup>2</sup>).
 
 
 O(n<sup>2</sup>) Time: 

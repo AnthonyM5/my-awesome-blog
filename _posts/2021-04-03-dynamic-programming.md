@@ -3,7 +3,7 @@ layout: post
 title: Dynamic Programming or How I learned to Love Sub-Problems
 ---
 
-<p>With our previous sorting algorithims we've employed the Divide and Conquer technique to recursively break problems into smaller easier to solve problems, before merging (bottom-up approach) to generate the final (initial request) result.  Dynamic Programming can also use recursion to help us solve problems, but with a top-down approach - i.e we only solve the base case sub-problem once and store the value to solve the larger sub-problems and continue storing these values. </p>
+<p>With our previous sorting algorithms we've employed the Divide and Conquer technique to recursively break problems into smaller easier to solve problems, before merging (bottom-up approach) to generate the final (initial request) result.  Dynamic Programming can also use recursion to help us solve problems, but with a top-down approach - i.e we only solve the base case sub-problem once and store the value to solve the larger sub-problems and continue storing these values. </p>
 
 
 A common example to illustrate the difference between the two methods is the classic Fibonacci numbers.
@@ -31,7 +31,7 @@ const fib = (n) => {
 
 ![fib(5)](https://i.stack.imgur.com/HpgSu.png)
 
-We have 2 recursive calls that fire *n* times, so the runtime O(2<sup>n</sup>) and in this case our space complexity (amount of memory reserved) will correspond to the input *n*. The problem with solutions like the purely recursive divde and conquer pattern above is that our time complexity would get needlessly large as input *n* increases.  
+We have 2 recursive calls that fire *n* times, so the runtime O(2<sup>n</sup>) and in this case our space complexity (amount of memory reserved) will correspond to the input *n*. The problem with solutions like the purely recursive divide and conquer pattern above is that our time complexity would get needlessly large as input *n* increases.  
 
 The time complexity to calculate fib(10) for example would require 2<sup>10</sup> or 1024 steps to derive. 2<sup>50</sup> results in 1,125,899,906,842,624 steps and actually hangs when we try to run.
 
@@ -43,9 +43,9 @@ The time complexity to calculate fib(10) for example would require 2<sup>10</sup
 Here is where one of the key principals of dynamic programming come into play - from the fibonacci tree above we can see that a lot of the same call is being made multiple times (fib(1), fib(0)) and even entire branches can be repeated as with fib(2), fib(3) branches which occur twice.  
 
 
-Recall in our very first the very first optimzation post we had dicussed the fast "key lookup" that JavaScript objects can afford us, and that a useful way of optimizing our soluition is to store our values in a way that can be rapidly accessed.  This concept can be used for a dynamic approach to our recursive fib function.  
+Recall in our very first the very first optimization post we had discussed the fast "key lookup" that JavaScript objects can afford us, and that a useful way of optimizing our solution is to store our values in a way that can be rapidly accessed.  This concept can be used for a dynamic approach to our recursive fib function.  
 
-By storing the values of fib(2), fib(3), and so forth, we arrive at the second (most important) part of a dynmamic programming solution - the ability to sole sub-problems only once and use that to derive more complex problems higher up the tree.  This particular optimization process is called memoization.
+By storing the values of fib(2), fib(3), and so forth, we arrive at the second (most important) part of a dynamic programming solution - the ability to sole sub-problems only once and use that to derive more complex problems higher up the tree.  This particular optimization process is called memoization.
 
 
 
