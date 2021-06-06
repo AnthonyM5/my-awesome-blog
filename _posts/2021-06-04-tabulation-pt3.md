@@ -9,6 +9,9 @@ We will adapt the tabulation methodology to revisit our previous problems, and r
 canConstruct Table:
 We want to return a boolean so we can start by creating a table with a length of our *targetString* + 1 with each index representing characters up to but not including our index - this means that our initial index represents an empty string and the final index represents the complete *targetString*.  We fill each index with false values, and set our initial index to true because we can always construct an empty string - we can also fill in true values for the given substrings.  Similar to the canSum tabulation we can iterate through the rest of the table to complete our possible combinations as well.   
 
+canConstruct Table:
+![canConstruct](https://drive.google.com/uc?id=1E6IyWAYnpUsk-n4L5KHMsWaTvVOgcwCA)
+
 {% highlight javascript %}
 
 const canConstruct = (targetString, wordBank) => {
@@ -37,6 +40,7 @@ const canConstruct = (targetString, wordBank) => {
 {% endhighlight %}
 
 countConstruct Table:
+![countConstruct](https://drive.google.com/uc?id=1CCrJIzwsdg7nlf8WiUFH883OVTN1P-Y5)
 
 For this version of the construct problem we want to return the number of possible combinations so our array will store an integer instead of a boolean.  Our tabulation will be similar in that we want to represent possible string combinations, but instead we will increment when we reach confirmed cases.  As with our previous tabulations, our first index represents a constant true value (empty string, 0, etc) that we can use to calculate further indices.
 
