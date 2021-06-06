@@ -35,3 +35,31 @@ const canConstruct = (targetString, wordBank) => {
 }
 
 {% endhighlight %}
+
+countConstruct Table:
+
+For this version of the construct problem we want to return the number of possible combinations so our array will store an integer instead of a boolean.  Our tabulation will be similar in that we want to represent possible string combinations, but instead we will increment when we reach confirmed cases.  As with our previous tabulations, our first index represents a constant true value (empty string, 0, etc) that we can use to calculate further indices.
+
+{% highlight javascript %}
+
+const countConstruct = (targetString, wordBank) => {
+// 1. Initiate a table with length of targetString + 1, filling with 0
+    const table = Array(targetString.length + 1).fill(0)
+// 2. We set our initial index to 1 (it is always possible to construct empty string)
+    table[0] = 1
+// 3. Iterate through our table  
+    for(let i = 0; i <= targetString.length; i++) {
+// 4. Iterate through our targetArray to fill table
+            for(let word of wordBank) {
+              const subString = targetString.slice(i, i + word.length)
+                if (subString === word) {
+// 5. If word in word bank matches to a corresponding substring in our *targetString* we can determine that this substring has the same possible combinations
+                    table[i + word.length] += table[i]
+                }
+            }
+        }
+    return table[targetString.length]
+}
+
+{% endhighlight %}
+
