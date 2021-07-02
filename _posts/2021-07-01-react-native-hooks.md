@@ -87,7 +87,7 @@ useEffect(() => {
 
 {% endhighlight %}
 
-This is a snippet of the full component that is used in this Expo App[4].  The basic functionality of this component powers a timer feature in our application that times and tracks things we want to focus on - upon timer end, the item we want to focus on is completed, and added to local storage history, making it available every time the app is launched!  We also have multiple other useStates that are passed through the App.js that informs us of everything from time remaining to power a progress bar, to whether a user cancels a task before completion.  Hopefully the way the states and effects are structured (and passed to components) are intuitively clearer than if they were all combined into life cycle components. 
+This is a snippet of the full component that is used in this [Expo App][4].  The basic functionality of this component powers a timer feature in our application that times and tracks things we want to focus on - upon timer end, the item we want to focus on is completed, and added to local storage history, making it available every time the app is launched!  We also have multiple other useStates that are passed through the App.js that informs us of everything from time remaining to power a progress bar, to whether a user cancels a task before completion.  Hopefully the way the states and effects are structured (and passed to components) are intuitively clearer than if they were all combined into life cycle components. 
 
 
 
