@@ -1,6 +1,6 @@
 ---
 layout: post
-title: React Navigation - Hooks
+title: React - Hooks
 ---
 
 React Hooks have been a part of the React library since 2018 and was introduced to move way from class syntax and keep track of component state without life cycle methods.  The introduction of React Hooks enables state logic more reusable across different components and can replicate all of the life cycle methods we're used to like componentDidMount, componentWillUnmount componentDidUpdate to make components a little more modular - we can abstract fetches to a separate function instead of nesting them into a lifecycle method.  As of [Release Version 0.59][1] hooks are available in React Native to build our components using functions and manage state.  We'll review some of the most useful hooks that are also available in React Native.
