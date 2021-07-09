@@ -97,7 +97,7 @@ function FriendStatus(props) {
 }
 
 {% endhighlight %}
-
+<br>
 In order to re-use this logic to check for online status of an entire contact list, the useEffect can be copied into this new contact list function, but this results in repeated code.  Instead, custom hooks can be structured so that whatever hooks need to be repeated are encapsulated in one function:
 
 {% highlight javascript %}
@@ -145,11 +145,8 @@ function FriendListItem(props) {
   );
 }
 {% endhighlight %}
-
+<br>
 The useFriendStatus custom hook receives an ID and returns a simple state - whether or not the user is online.  This allows the *isOnline* check to be shared easily across our components.  The combination of *useState*, *useEffect*, and the custom hook made checking state and storing state possible without the use of classes and replicates the life cycle of a class component that would check for mounting and un-mounting.
-
-
-
 
 
 
