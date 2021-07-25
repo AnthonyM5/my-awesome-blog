@@ -107,3 +107,4 @@ A triangle can be made and oriented in any cardinal direction by adjusting the b
 [8]:https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis 
 [9]:https://drafts.csswg.org/css-sizing-3/#max-content
 [10]:https://drafts.csswg.org/css-sizing-3/#min-content
+[11]:https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
