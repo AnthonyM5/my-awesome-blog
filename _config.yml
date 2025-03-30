@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -21,30 +21,31 @@
 title: My Awesome Blog
 email: Anthony.Mai530@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Journey of learning how to learn. We’ll attempt to understand well enough to explain simply.  
+  Journey of learning how to learn. We’ll attempt to understand well enough to explain simply.
 baseurl: "my-awesome-blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Anthony76567225
-github_username:  AnthonyM5
+github_username: AnthonyM5
 linkedin: AnthonyM5
 
 # Build settings
-theme: minima 
-skin: dark 
+theme: minima
+skin: dark
 plugins:
   - jekyll-feed
+collections:
+permalink: /:title
 
-default: 
-- _includes 
+default:
+  - _includes
 values:
-      layout: posts 
-      author_profile: false
-      read_time: true
-      #show_date: true
-      comments: true
-      share: true
-      related: true
-
+  layout: posts
+  author_profile: false
+  read_time: true
+  #show_date: true
+  comments: true
+  share: true
+  related: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
