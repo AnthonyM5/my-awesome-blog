@@ -36,6 +36,14 @@ plugins:
 
 default: 
 - _includes 
+values:
+      layout: posts 
+      author_profile: false
+      read_time: true
+      #show_date: true
+      comments: true
+      share: true
+      related: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
